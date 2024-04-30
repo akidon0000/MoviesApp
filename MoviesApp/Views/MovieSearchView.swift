@@ -8,7 +8,7 @@
 
 import SwiftUI
 // すべての映画を表示する役割を担います
-struct MovieListView: View {
+struct MovieSearchView: View {
     //映画を映画リストビューに渡す必要があります。
 //moviesは moviesと同じで、ムービービューモデルの種類になります。
     let movies: [Movie]
