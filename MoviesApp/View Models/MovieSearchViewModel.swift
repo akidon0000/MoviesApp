@@ -22,12 +22,11 @@ final class MovieSearchViewModel {
     }
 
     func fetchMoviesByTitleName(_ name: String) {
-        if name.isEmpty {
-            return
-        }
+        if name.isEmpty { return }
+        let formatTitleName = name.trimmedAndEscaped()
         self.loadingState = .loading
 
-        httpClient.getMoviesBy(search: name.trimmedAndEscaped()) { result in
+        httpClient.getMoviesBy(search: formatTitleName) { result in
             switch result {
             case .success(let movies):
                 guard let movies = movies else { return }
