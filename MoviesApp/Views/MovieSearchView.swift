@@ -1,5 +1,5 @@
 //
-//  MovieListView.swift
+//  MovieSearchView.swift
 //  MoviesApp
 //
 //  Created by Hina on 2024/04/29.
@@ -10,7 +10,7 @@ import SwiftUI
 // すべての映画を表示する役割を担います
 struct MovieSearchView: View {
     //映画を映画リストビューに渡す必要があります。
-//moviesは moviesと同じで、ムービービューモデルの種類になります。
+    //moviesは moviesと同じで、ムービービューモデルの種類になります。
     let movies: [Movie]
 
     var body: some View {

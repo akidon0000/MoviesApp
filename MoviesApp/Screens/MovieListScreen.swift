@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MovieListScreen: View {
-// 監視されている
+    // 監視されている
     @ObservedObject private var movieListVM: MovieListViewModel
     @State var movieName = ""
     init() {

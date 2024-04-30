@@ -22,11 +22,11 @@ class MovieDetailViewModel: ObservableObject {
 
         httpClient.getMovieDetailsBy(imdbId: imdbId) { result in
             switch result {
-                case .success(let details):
-                    DispatchQueue.main.async {
-                        self.movieDetail = details
-                        self.loadingState = .success
-                    }
+            case .success(let details):
+                DispatchQueue.main.async {
+                    self.movieDetail = details
+                    self.loadingState = .success
+                }
 
             case .failure(let error):
                 print(error.localizedDescription)

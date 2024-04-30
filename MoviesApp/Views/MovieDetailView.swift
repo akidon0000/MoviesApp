@@ -32,7 +32,7 @@ struct MovieDetailView: View {
                 Spacer()
             }.padding()
 
-            .navigationBarTitle(self.movieDetailVM.title)
+                .navigationBarTitle(self.movieDetailVM.title)
         }
     }
 }
