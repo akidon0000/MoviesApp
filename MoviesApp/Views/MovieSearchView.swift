@@ -9,9 +9,9 @@
 import SwiftUI
 // すべての映画を表示する役割を担います
 struct MovieSearchView: View {
-    @State var viewModel: MovieListViewModel
+    @State var viewModel: MovieSearchViewModel
 
-    init(viewModel: MovieListViewModel = MovieListViewModel()) {
+    init(viewModel: MovieSearchViewModel = MovieSearchViewModel()) {
         _viewModel = State(wrappedValue: viewModel)
     }
 

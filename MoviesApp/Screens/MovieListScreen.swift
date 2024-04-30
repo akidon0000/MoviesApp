@@ -10,10 +10,10 @@ import SwiftUI
 
 struct MovieListScreen: View {
     // 監視されている
-    @ObservedObject private var movieListVM: MovieListViewModel
+    @ObservedObject private var movieListVM: MovieSearchViewModel
     @State var movieName = ""
     init() {
-        self.movieListVM = MovieListViewModel()
+        self.movieListVM = MovieSearchViewModel()
     }
     var body: some View {
         NavigationStack {

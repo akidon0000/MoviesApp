@@ -1,5 +1,5 @@
 //
-//  MovieViewModel.swift
+//  MovieSearchViewModel.swift
 //  MoviesApp
 //
 //  Created by Hina on 2024/04/29.
@@ -9,7 +9,7 @@
 import Foundation
 // 構造体だったら名前検索がmutating functionになる
 // ObservableObjectはclassのみ
-class MovieListViewModel: ViewModel {
+class MovieSearchViewModel: ViewModel {
     // ビューは、Httpクライアントを使用してURLからデータを取得したことを認識せず、
     // ビューを再レンダリングする必要があります。Published
     @Published var movies = [Movie]()
