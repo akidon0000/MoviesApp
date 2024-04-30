@@ -14,10 +14,21 @@ protocol HTTPClientProtocol {
 }
 
 struct HTTPClient: HTTPClientProtocol {
+    enum Endpoint: String {
+        case imdbId = "i"
+        case name = "s"
 
+        static let baseURL = "http://www.omdbapi.com/"
+        static let apiKey = Constants.API_KEY
+
+        func url(for query: String) -> URL? {
+            URL(string: "\(Endpoint.baseURL)?\(self.rawValue)=\(query)&apikey=\(Endpoint.apiKey)")
+        }
+    }
+    
     func getMovieDetailsBy(imdbId: String, completion: @escaping (Result<MovieDetail, ApiError>) -> Void) {
 
-        guard let url = URL.forMoviesByImdbId(imdbId) else {
+        guard let url = Endpoint.imdbId.url(for: imdbId) else {
             return completion(.failure(.urlError))
         }
 
@@ -37,7 +48,7 @@ struct HTTPClient: HTTPClientProtocol {
 
     }
     func getMoviesBy(search: String, completion: @escaping (Result<[Movie]?, ApiError>) -> Void) {
-        guard let url = URL.forMoviesByName(search) else {
+        guard let url = Endpoint.name.url(for: search) else {
             return completion(.failure(.urlError))
         }
 
