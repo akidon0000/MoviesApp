@@ -12,9 +12,14 @@ import Foundation
 final class MovieSearchViewModel {
     // ビューは、Httpクライアントを使用してURLからデータを取得したことを認識せず、
     // ビューを再レンダリングする必要があります。Published
-    @Published var movies = [Movie]()
+    @Published var movies: [Movie]
     @Published var loadingState: LoadingState
     let httpClient = HTTPClient()
+
+    init(movies: [Movie] = [Movie](), loadingState: LoadingState = .none) {
+        self.movies = movies
+        self.loadingState = loadingState
+    }
 
     func searchByName(_ name: String) {
         if name.isEmpty {
