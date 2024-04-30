@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftUI
 // 構造体だったら名前検索がmutating functionになる
 // ObservableObjectはclassのみ
 class MovieListViewModel: ViewModel {
