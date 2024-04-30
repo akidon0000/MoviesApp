@@ -21,7 +21,7 @@ final class MovieSearchViewModel {
         self.loadingState = loadingState
     }
 
-    func searchByName(_ name: String) {
+    func fetchMoviesByTitleName(_ name: String) {
         if name.isEmpty {
             return
         }
