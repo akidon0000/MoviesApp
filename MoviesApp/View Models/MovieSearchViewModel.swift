@@ -9,10 +9,11 @@
 import Foundation
 // 構造体だったら名前検索がmutating functionになる
 // ObservableObjectはclassのみ
-class MovieSearchViewModel: ViewModel {
+final class MovieSearchViewModel {
     // ビューは、Httpクライアントを使用してURLからデータを取得したことを認識せず、
     // ビューを再レンダリングする必要があります。Published
     @Published var movies = [Movie]()
+    @Published var loadingState: LoadingState
     let httpClient = HTTPClient()
 
     func searchByName(_ name: String) {
