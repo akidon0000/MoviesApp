@@ -95,7 +95,6 @@
 				8D7ACB5E24D1E56C00644453 /* Utils */,
 				8D7ACB5B24D1E51C00644453 /* View Models */,
 				8D7ACB5A24D1E51700644453 /* Models */,
-				8D7ACB5924D1E50B00644453 /* Services */,
 				8D7ACB5824D1E50100644453 /* Loaders */,
 				8D7ACB5724D1E4EE00644453 /* Controls */,
 				8D7ACB5624D1E4E800644453 /* Extensions */,
@@ -166,17 +165,10 @@
 			path = Loaders;
 			sourceTree = "<group>";
 		};
-		8D7ACB5924D1E50B00644453 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				538B7BA32BDF5FE2005D30FC /* HTTPClient.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		8D7ACB5A24D1E51700644453 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				538B7BA32BDF5FE2005D30FC /* HTTPClient.swift */,
 				538B7BB72BDFA593005D30FC /* LoadingState.swift */,
 				538B7B9F2BDF5D60005D30FC /* Movie.swift */,
 				538B7BBB2BDFABA3005D30FC /* MovieDetail.swift */,
