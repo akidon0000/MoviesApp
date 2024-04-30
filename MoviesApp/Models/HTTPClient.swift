@@ -8,7 +8,12 @@
 
 import Foundation
 
-class HTTPClient {
+protocol HTTPClientProtocol {
+    func getMovieDetailsBy(imdbId: String, completion: @escaping (Result<MovieDetail, ApiError>) -> Void)
+    func getMoviesBy(search: String, completion: @escaping (Result<[Movie]?, ApiError>) -> Void)
+}
+
+struct HTTPClient: HTTPClientProtocol {
 
     func getMovieDetailsBy(imdbId: String, completion: @escaping (Result<MovieDetail, ApiError>) -> Void) {
 
