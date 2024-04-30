@@ -9,15 +9,28 @@
 import SwiftUI
 // すべての映画を表示する役割を担います
 struct MovieSearchView: View {
-    //映画を映画リストビューに渡す必要があります。
-    //moviesは moviesと同じで、ムービービューモデルの種類になります。
-    let movies: [Movie]
+    @State var viewModel: MovieListViewModel
+
+    init(viewModel: MovieListViewModel = MovieListViewModel()) {
+        _viewModel = State(wrappedValue: viewModel)
+    }
 
     var body: some View {
-        List(self.movies, id: \.imdbId) { movie in
-            NavigationLink(destination: MovieDetailScreen(imdbId: movie.imdbId)) {
+        List(viewModel.movies, id: \.self.imdbId) { movie in
+            NavigationLink(
+                destination: MovieDetailScreen(
+                    imdbId: movie.imdbId
+                )
+            ) {
                 MovieCell(movie: movie)
             }
         }
+    }
+}
+
+struct MovieSearchView_Previews: PreviewProvider {
+    static var previews: some View {
+        MovieSearchView()
+            .previewDisplayName("Default View")
     }
 }
