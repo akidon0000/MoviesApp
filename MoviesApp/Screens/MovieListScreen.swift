@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MovieListScreen: View {
     // 監視されている
-    @ObservedObject private var movieListVM: MovieSearchViewModel
+    @State private var movieListVM: MovieSearchViewModel
     @State var movieName = ""
     init() {
         self.movieListVM = MovieSearchViewModel()
@@ -19,13 +19,13 @@ struct MovieListScreen: View {
         NavigationStack {
             VStack {
                 TextField("Search", text: $movieName) {
-                    movieListVM.searchByName(movieName)
+                    movieListVM.fetchMoviesByTitleName(movieName)
                 }
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 Spacer()
 
                 if self.movieListVM.loadingState == .success {
-                    MovieSearchView(movies: self.movieListVM.movies)
+                    MovieSearchView(viewModel: MovieSearchViewModel( movies: self.movieListVM.movies))
                 } else if self.movieListVM.loadingState == .failed {
                     FailedView()
                 } else if self.movieListVM.loadingState == .loading {
