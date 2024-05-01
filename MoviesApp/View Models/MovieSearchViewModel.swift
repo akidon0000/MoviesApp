@@ -9,7 +9,7 @@
 import Foundation
 // 構造体だったら名前検索がmutating functionになる
 // ObservableObjectはclassのみ
-final class MovieSearchViewModel {
+final class MovieSearchViewModel: ObservableObject {
     // ビューは、Httpクライアントを使用してURLからデータを取得したことを認識せず、
     // ビューを再レンダリングする必要があります。Published
     @Published var movies: [Movie]
